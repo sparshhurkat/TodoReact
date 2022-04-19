@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoList from "./component/TodoList"
+import styles from "./styles";
+import { Typography } from '@mui/material';
 
-function App() {
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  todos: {
+    fontSize: "16px",
+    paddingLeft: "0px",
+    marginTop: "5px",
+  },
+});
+
+const App=()=> {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+    <Typography variant="h1" className={classes.todos}>
+      todos
+    </Typography>
+    <TodoList />
+    </section>
   );
 }
 
